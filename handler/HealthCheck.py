@@ -3,16 +3,13 @@ import json
 
 
 class HealthCheckHandler(tornado.web.RequestHandler):
-    def initialize(self, logger, mongodb):
-        self.logger = logger
-        self.mongodb = mongodb
-
+    logger = logging.getLogger('HealthCheck')
+    
     @tornado.web.asynchronous
     @tornado.gen.coroutine
     def get(self):
         self.logger.info('Request to health check')
 
-        # noinspection PyDictCreation
         components = {
             'mongodb': None
         }
