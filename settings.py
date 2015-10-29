@@ -8,5 +8,5 @@ define("db_name", default="test", help="Database name")
 define("max_buffer_size", default=50 * 1024**2, help="")
 
 routing = [
-    (r"/", HealthCheckHandler, {'logger': logging.getLogger('HealthCheck')}),
+    (r"/", HealthCheckHandler),
 ]
