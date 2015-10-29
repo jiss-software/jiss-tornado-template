@@ -14,7 +14,7 @@ class HealthCheckHandler(tornado.web.RequestHandler):
             'mongodb': None
         }
 
-        components['mongodb'] = yield self.mongodb.alive()
+        components['mongodb'] = yield self.settings['db'].alive()
 
         for key in components:
             if components[key] is None:
