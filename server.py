@@ -17,7 +17,7 @@ logging.basicConfig(
 
 ioLoop = tornado.ioloop.IOLoop.current()
 mongodb = ioLoop.run_sync(motor.MotorClient(options.db_address).open)
-app = tornado.web.Application(routing, db=mongodb, autoreload=True)
+app = tornado.web.Application(routing, db=mongodb, autoreload=options.autoreload)
 
 app.listen(options.port)
 
