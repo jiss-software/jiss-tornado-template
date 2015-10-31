@@ -11,7 +11,7 @@ if not os.path.exists(options.log_dir):
 
 logging.basicConfig(
     format='%(asctime)s [%(name)s] %(levelname)s: %(message)s',
-    filename='log/server.log',
+    filename='%s/%s' % (options.log_dir, options.log_file),
     level=logging.DEBUG
 )
 
